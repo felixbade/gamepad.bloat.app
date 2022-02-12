@@ -18,6 +18,7 @@ async def echo(websocket):
         print(message)
         await asyncio.gather(*[c.send(message) for c in connections])
 
+    connections.remove(websocket)
     print('Connection ended')
 
 async def main():
