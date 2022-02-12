@@ -1,4 +1,5 @@
 let gamepadConnected = false
+const socket = new WebSocket("ws://localhost:8000")
 
 function setup() {
     let c = createCanvas(window.innerWidth, window.innerHeight)
@@ -38,6 +39,7 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('gamepadconnected', () => {
     gamepadConnected = true
+    socket.send('connected')
 })
 
 document.getElementById('full-screen-button').addEventListener('click', () => {
