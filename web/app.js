@@ -1,5 +1,6 @@
 let gamepadConnected = false
-const socket = new WebSocket("ws://localhost:8000")
+//const socket = new WebSocket("ws://localhost:8000")
+const socket = new WebSocket("wss://gamepad.bloat.app/ws/")
 
 function setup() {
     let c = createCanvas(window.innerWidth, window.innerHeight)
